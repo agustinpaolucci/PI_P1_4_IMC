@@ -5,32 +5,36 @@ class Program
     private static void Main(string[] args)
     {
 
-        Persona p01;
-        p01 = new Persona();
+        Persona p01; // P01 ES UNA VARIABLE DE TIPO PERSONA
+        p01 = new Persona(); // P01 ES UN OBJETO INSTANCIA DE LA CLASE PERSONA HECHO CON NEW 
 
-        p01.pNombre = "Agustin";
+        Persona p02 = new Persona();
 
-        Persona p02 = new Persona("Juan",24,"H",72.5,1.74);
+        Console.WriteLine("Ingrese el nombre de la persona...");
+        p02.pNombre = Console.ReadLine();
 
-        Persona p03 = new Persona();
+        Console.WriteLine("Ingrese la edad de "+p02.pNombre+"...");
+        p02.pEdad = Convert.ToInt32(Console.ReadLine());
 
-        Console.WriteLine("Escriba el nombre de la persona...");
-        p03.pNombre = Console.ReadLine();
+        Console.WriteLine("Indique el sexo respetando 'H' para Hombre y 'M' para Mujer...");
+        p02.pSexo = Console.ReadLine();
 
-        Console.WriteLine("Ingrese la edad de la persona...");
-        p03.pEdad = Convert.ToInt32(Console.ReadLine());
+        Console.WriteLine("Ingrese el peso en Kg...");
+        p02.pPeso = Convert.ToDouble(Console.ReadLine());
 
-        Console.WriteLine(p01.ToString());
-        Console.WriteLine(p02.ToString());
-        Console.WriteLine(p03.ToString());
+        Console.WriteLine("Indique la altura en mts...");
+        p02.pAltura = Convert.ToDouble(Console.ReadLine());
 
-
-
-
-        Console.WriteLine("Presione una tecla para finalizar");
-        Console.ReadLine();
+        Console.WriteLine("Presione una tecla para ver la info completa con IMC y Mayoria de edad...");
         
+        Console.WriteLine(p02.ToString());
 
+        Persona p03 = new Persona("Sonia", 25, "M", 132.5, 1.85);
+
+        Console.WriteLine(p03.ToString());
+        Console.WriteLine("Presione una tecla para finalizar...");
+       
+        Console.ReadLine();
 
     }
 }
